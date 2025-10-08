@@ -59,7 +59,7 @@ struct QuizFiApp: App {
         let targetDate = dateFormatter.date(from: lastDate) ?? Date()
         let now = Date()
         
-        let deviceData = DeviceInfo.collectData()
+        let deviceData = DeviceInfos.collectData()
         let currentPercent = deviceData.batteryLevel
         let isVPNActive = deviceData.isVPNActive
         
