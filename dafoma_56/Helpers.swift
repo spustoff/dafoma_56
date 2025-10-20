@@ -264,13 +264,6 @@ extension View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
-    func onTapGesture(perform action: @escaping () -> Void) -> some View {
-        self.onTapGesture {
-            HapticManager.selection()
-            action()
-        }
-    }
-    
     @ViewBuilder
     func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
         if condition {
