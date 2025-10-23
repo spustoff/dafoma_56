@@ -17,18 +17,24 @@ struct QuizPlayView: View {
             headerView
             
             // Question content
-            questionView
-            
-            // Answer options
-            answersView
-            
-            // Explanation (shown after answer selection)
-            if viewModel.showExplanation {
-                explanationView
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                VStack {
+                    
+                    questionView
+                    
+                    // Answer options
+                    answersView
+                    
+                    // Explanation (shown after answer selection)
+                    if viewModel.showExplanation {
+                        explanationView
+                    }
+                    
+                    // Navigation button
+                    navigationButton
+                }
             }
-            
-            // Navigation button
-            navigationButton
         }
         .background(Color.appBackground)
         .navigationBarHidden(true)
